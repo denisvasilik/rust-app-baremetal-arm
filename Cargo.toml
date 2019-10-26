@@ -1,0 +1,28 @@
+[package]
+name = "rust-app-baremetal-arm"
+version = "0.1.0"
+authors = ["Denis Vasilik <contact@denisvasilik.com>"]
+edition = "2018"
+
+[[bin]]
+name = "rust-app-baremetal-arm"
+test = false
+bench = false
+
+[dependencies]
+panic-abort = "0.3.1"
+register = "0.3.2"
+
+[dependencies.arm-semihosting]
+git = "https://github.com/denisvasilik/arm-semihosting"
+features = ["inline-asm", "arm"]
+
+[dependencies.compiler_builtins]
+git = "https://github.com/rust-lang/compiler-builtins"
+features = ["mem"]
+
+[profile.release]
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
