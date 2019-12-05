@@ -24,12 +24,13 @@ docker-build-toolchain-image:
 		--build-arg TOOLCHAIN=${TOOLCHAIN} \
 		--build-arg TARGET=${TARGET} \
 		-t ${TOOLCHAIN_IMAGE_TAG} \
-		-f docker/qemu/Dockerfile .
+		-f docker/toolchain/Dockerfile \
+		docker/toolchain
 
 docker-build-app:
 	docker run -it \
 		-v ${PWD}/..:/home/rustecean/build \
-		-v ${PWD}/docker/build/build.sh:/home/rustecean/build.sh \
+		-v ${PWD}/docker/toolchain/build.sh:/home/rustecean/build.sh \
 		--rm ${TOOLCHAIN_IMAGE_TAG}
 
 docker-run-app:
