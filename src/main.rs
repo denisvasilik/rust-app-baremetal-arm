@@ -1,7 +1,6 @@
 #![feature(lang_items)]
-#![feature(compiler_builtins_lib)]
 #![feature(global_asm)]
-#![feature(asm)]
+#![feature(llvm_asm)]
 #![no_std]
 #![no_main]
 
