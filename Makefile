@@ -1,4 +1,4 @@
-DATE=2019-10-04
+DATE=2020-07-12
 CHANNEL=nightly
 TARGET=armv7-unknown-linux-gnueabihf
 PWD=${shell pwd}
